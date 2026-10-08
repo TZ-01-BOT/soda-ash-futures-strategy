@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+
+# 虚拟环境
+venv/
+env/
+.venv/
+
+# 数据与结果（大数据不入库）
+data/*.csv
+results/*.pkl
+results/backtest_result.png
+
+# README 首图保留入库
+!results/readme_banner.png
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/

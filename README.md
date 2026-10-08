@@ -54,21 +54,29 @@
 
 ```
 soda-ash-futures-strategy/
-├── main.py                 # 入口脚本
-├── src/
-│   ├── config.py           # 全局参数配置
-│   ├── data_loader.py      # 数据加载（含合成样本数据）
-│   ├── features.py         # 时间序列特征工程
-│   ├── model.py            # 增强线性回归 + Walk-Forward
-│   ├── strategy.py         # 交易信号与风控
-│   ├── backtest.py         # 回测引擎与绩效指标
-│   └── visualization.py    # 净值曲线/回撤/信号可视化
-├── data/                   # 行情数据（CSV）
-├── results/                # 回测结果与图表
-├── notebooks/              # 探索性分析
-├── requirements.txt
-└── README.md
+├── main.py                    # 入口脚本：一键运行完整流程
+├── make_banner.py             # 生成 README 首图
+├── requirements.txt           # 依赖清单
+├── README.md                  # 项目说明
+├── .gitignore                 # 忽略规则
+│
+├── src/                       # 核心源码
+│   ├── __init__.py
+│   ├── config.py              # 全局参数配置
+│   ├── data_loader.py         # 数据加载（无数据时生成合成样本）
+│   ├── features.py            # 时间序列特征工程
+│   ├── model.py               # 增强线性回归 + Walk-Forward
+│   ├── strategy.py            # 交易信号与风险控制
+│   ├── backtest.py            # 回测引擎与绩效指标
+│   └── visualization.py       # 净值/回撤/信号可视化
+│
+├── results/                   # 回测结果与图表（运行时生成）
+│   └── readme_banner.png      # README 首图
+│
+└── data/                      # (可选) 放入你的行情数据 CSV
 ```
+
+> `data/` 目录默认由你手动创建并放入 `soda_ash_futures.csv`；未提供数据时，`data_loader` 会自动生成合成样本用于演示。
 
 ## 🚀 快速开始
 
